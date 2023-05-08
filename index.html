@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Millionaire Game</title>
+
+    <link rel="stylesheet" href="./css/time.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="game-page">
+      <!-- <div id="overlay" class="overlay"></div>
+
+      <div id="name-modal" class="name-modal">
+        <h1>Oyuna xoş gəlmisiz!</h1>
+
+        <p>Adınızı qeyd edin</p>
+
+        <input type="text" />
+
+        <button id="start-btn" class="hexagon">Başla</button>
+      </div> -->
+
+      <!-- <div id="ranking-box-wrapper">
+        <div class="ranking-box page-box">
+          <h2>Ranking Box</h2>
+
+          <div class="rang-wrapper">
+            <div class="player-rank blue-hexagon">
+              <img src="./Assests/icons/1.png" alt="" />
+
+              <span>Player1</span>
+            </div>
+
+            <div class="player-rank blue-hexagon">
+              <img src="./Assests/icons/2.png" alt="" />
+
+              <span>Player2</span>
+            </div>
+            <div class="player-rank blue-hexagon">
+              <img src="./Assests/icons/3.png" alt="" />
+
+              <span>Player3</span>
+            </div>
+            <div class="player-rank blue-hexagon">4. Player4</div>
+            <div class="player-rank blue-hexagon">5. Player5</div>
+            <div class="player-rank blue-hexagon">6. Player6</div>
+            <div class="player-rank blue-hexagon">7. Player7</div>
+            <div class="player-rank blue-hexagon">8. Player8</div>
+          </div>
+        </div>
+
+        <button class="hexagon new-game-btn">Yeni oyuna başla</button>
+      </div> -->
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+      integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./scritp.js"></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCGIvlumkQhbnSKXYzneJLez3yxDHRwds8",
+        authDomain: "react-http-request-7c7ef.firebaseapp.com",
+        databaseURL:
+          "https://react-http-request-7c7ef-default-rtdb.firebaseio.com",
+        projectId: "react-http-request-7c7ef",
+        storageBucket: "react-http-request-7c7ef.appspot.com",
+        messagingSenderId: "557136554713",
+        appId: "1:557136554713:web:ff3bfa11a8c606ea166cc8",
+      };
+
+      const app = initializeApp(firebaseConfig);
+    </script>
+  </body>
+</html>
+
+<!-- <div class="ranking-box page-box">
+  <h2>Ranking Box</h2>
+
+  <div class="rang-wrapper">
+    <div class="player-rank blue-hexagon">
+      <img src="./Assests/icons/1.png" alt="" />
+
+      <span>Player1</span>
+    </div>
+
+    <div class="player-rank blue-hexagon">
+      <img src="./Assests/icons/2.png" alt="" />
+
+      <span>Player2</span>
+    </div>
+    <div class="player-rank blue-hexagon">
+      <img src="./Assests/icons/3.png" alt="" />
+
+      <span>Player3</span>
+    </div>
+    <div class="player-rank blue-hexagon">4. Player4</div>
+    <div class="player-rank blue-hexagon">5. Player5</div>
+    <div class="player-rank blue-hexagon">6. Player6</div>
+    <div class="player-rank blue-hexagon">7. Player7</div>
+    <div class="player-rank blue-hexagon">8. Player8</div>
+  </div>
+</div>
+
+<div class="help-box page-box">
+  <a href="#" class="help-button-container">
+    <img src="./Assests/icons/50.png" alt="" />
+  </a>
+
+  <a href="#" class="help-button-container">
+    <img src="./Assests/icons/phone-call.png" alt="" />
+  </a>
+
+  <a href="#" class="help-button-container">
+    <img src="./Assests/icons/contacts.png" alt="" />
+  </a>
+</div> -->
+
+<!-- <div class="ranking-box page-box">
+        <h2>Ranking Box</h2>
+
+        <div class="rang-wrapper">
+          <button class="player-rank blue-hexagon">
+            <p><img src="./Assests/icons/medal-first.png" alt="" /></p
+            >Player1
+          </button>
+          <button class="player-rank blue-hexagon">
+            <span><img src="./Assests/icons/medal-second.png" alt="" /></span
+            >Player2
+          </button>
+          <button class="player-rank blue-hexagon">
+            <span><img src="./Assests/icons/medal-third.png" alt="" /></span
+            >Player3
+          </button>
+          <button class="player-rank blue-hexagon">4. Player4</button>
+          <button class="player-rank blue-hexagon">5. Player5</button>
+          <button class="player-rank blue-hexagon">6. Player6</button>
+          <button class="player-rank blue-hexagon">7. Player7</button>
+          <button class="player-rank blue-hexagon">8. Player8</button>
+        </div>
+      </div>
+
+      <div class="help-box page-box">
+        <a href="#" class="help-button-container">
+          <img src="./Assests/icons/50.png" alt="" />
+        </a>
+
+        <a href="#" class="help-button-container">
+          <img src="./Assests/icons/phone-call.png" alt="" />
+        </a>
+
+        <a href="#" class="help-button-container">
+          <img src="./Assests/icons/contacts.png" alt="" />
+        </a>
+      </div>
+
+      <div class="page-box name-wrapper">
+        <h2>Player Name</h2>
+      </div>
+
+      <div class="current-position">
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$1,000,000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>3000</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$500,000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>2800</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$250,000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>2600</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$125,000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>2400</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$64,000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>2200</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$32,000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>2000</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$16,000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>1800</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$8000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>1600</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$4000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>1400</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$2000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>1200</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$1000</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>1000</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$500</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>800</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$300</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>600</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$200</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>400</span>
+          </div>
+        </div>
+
+        <div class="point-wrapper blue-hexagon">
+          <span class="money">$100</span>
+
+          <div class="player-point">
+            <img src="./Assests/icons/point.png" alt="" />
+
+            <span>200</span>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="query-wrapper">
+        <div class="question blue-hexagon">
+          <p>Çempionlar liqasını 5 dəfə qaldıran klub?</p>
+        </div>
+
+        <div class="answer-container">
+          <div class="answer-column">
+            <button id="1" class="answer blue-hexagon">A. Liverpul</button>
+
+            <button id="2" class="answer blue-hexagon">C. Milan</button>
+          </div>
+
+          <div class="answer-column">
+            <button id="3" class="answer blue-hexagon">B. Barcelona</button>
+
+            <button id="4" class="answer blue-hexagon">D. Mançester</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert-box page-box">
+        <h3>Seçdiyiniz variantı təsdiq edirsiniz?</h3>
+
+        <div class="alert-answer-box">
+          <button id="yes">Bəli</button>
+
+          <button id="no">Xeyr</button>
+        </div>
+      </div> -->
+
+<!-- <div id="time" class="time"></div> -->
+
+<!-- <div class="help-box page-box">
+        <button class="help-button-container">
+          <img src="./Assests/icons/50.png" alt="" />
+        </button>
+
+        <button class="help-button-container">
+          <img src="./Assests/icons/phone-call.png" alt="" />
+        </button>
+
+        <button class="help-button-container">
+          <img src="./Assests/icons/contacts.png" alt="" />
+        </button>
+      </div> -->
+
+<!-- <div class="calling">
+        <h4>Dostunuza zəng edilir</h4>
+
+        <div class="calling-content">
+          <img id="calling-box-image" src="./Assests/gifs/calling.gif" alt="" />
+
+          <p>Dostunuzun cavabı ${} variantıdır</p>
+        </div>
+      </div> -->
+
+<!-- <div class="help-box-content">
+        <div class="cart-answer-percentage">
+          <span>50%</span>
+
+          <span>20%</span>
+
+          <span>5%</span>
+
+          <span>25%</span>
+        </div>
+
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+        <p id="cart-line"></p>
+
+        <div id="chart-answers">
+          <div class="chart-simple-answer">
+            <div class="cart-answer-column"></div>
+
+            <p>A</p>
+          </div>
+
+          <div class="chart-simple-answer">
+            <div class="cart-answer-column"></div>
+
+            <p>B</p>
+          </div>
+
+          <div class="chart-simple-answer">
+            <div class="cart-answer-column"></div>
+
+            <p>C</p>
+          </div>
+
+          <div class="chart-simple-answer">
+            <div class="cart-answer-column"></div>
+
+            <p>D</p>
+          </div>
+        </div>
+      </div> -->
+
+<!-- <div id="time-alert">
+        <p>Sualı cavablandırmaq üçün 15 saniyə vaxtınız qaldı</p>
+      </div> -->
+
+<!-- <div id="win-game-alert">
+        <h2>Təbriklər 1 milyon dollar qazandınız</h2>
+
+        <button class="hexagon">Sıralamaya bax</button>
+      </div> -->
