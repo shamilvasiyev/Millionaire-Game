@@ -620,6 +620,9 @@ const rankingList = (newPlayer) => {
   const newPlayerList = updatedList.sort(
     (a, b) => Number(b.score) - Number(a.score)
   );
+  
+currentPosition = 1;
+
 
   gamePage.innerHTML = `
     <div class="overlay"></div>
