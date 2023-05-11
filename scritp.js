@@ -626,9 +626,8 @@ const rankingList = (newPlayer) => {
   const newPlayerList = updatedList.sort(
     (a, b) => Number(b.score) - Number(a.score)
   );
-  
-currentPosition = 1;
 
+  currentPosition = 1;
 
   currentPosition = 1;
 
