@@ -231,25 +231,6 @@ ul {
   border: none;
 }
 
-/* .blue-hexagon {
-  clip-path: polygon(8% 0, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
-  position: relative;
-  background-color: #fff;
-} */
-
-/* .blue-hexagon::after {
-  content: "";
-  position: absolute;
-  width: 99%;
-  height: 95%;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  clip-path: polygon(8% 0, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
-  
-  z-index: -1;
-} */
-
 .help-box {
   top: calc(2% + 300px);
   left: 2%;

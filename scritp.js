@@ -6,6 +6,8 @@ let currentAnswerId;
 let modalOpen = false;
 let playerName = "";
 let playerList;
+let newQuestionIndex;
+let oldQuestionsIndex = [];
 
 const COLOR_CODES = {
   info: {
@@ -336,7 +338,7 @@ const checkAnswer = async (e) => {
 
     trueAnswerAudio.play();
 
-    currentQuestion = questions[currentPosition - 1];
+    await generateNumber();
 
     onTimesUp();
 
@@ -345,6 +347,7 @@ const checkAnswer = async (e) => {
     nextQuestion();
 
     alertBoxHeader.textContent = `Sualı dogru cavablandırdınız.`;
+    alertBoxHeader.style.margin = 0;
     alertButtons.style.display = "none";
 
     setTimeout(() => {
@@ -560,6 +563,8 @@ const timeAlert = (time) => {
 };
 
 const endGame = (text) => {
+  oldQuestionsIndex = [];
+
   gamePage.innerHTML = `
     <div class="overlay"></div>
 
@@ -581,7 +586,9 @@ const fetchQuestionHandler = async () => {
   );
   const data = await questionResp.json();
   questions = data;
-  currentQuestion = questions[0];
+
+  generateNumber();
+
   return data;
 };
 
@@ -611,7 +618,6 @@ const sendPlayerName = async () => {
       body: JSON.stringify(newPlayerData),
     }
   );
-  const response = await sendPlayerData.json();
   rankingList(newPlayerData);
 };
 
@@ -620,6 +626,8 @@ const rankingList = (newPlayer) => {
   const newPlayerList = updatedList.sort(
     (a, b) => Number(b.score) - Number(a.score)
   );
+
+  currentPosition = 1;
 
   gamePage.innerHTML = `
     <div class="overlay"></div>
@@ -652,3 +660,17 @@ const rankingList = (newPlayer) => {
     .getElementsByClassName("new-game-btn")[0]
     .addEventListener("click", enterNameHandler);
 };
+
+function generateNumber() {
+  newQuestionIndex = Math.floor(Math.random() * 45) + 1;
+
+  if (oldQuestionsIndex.includes(newQuestionIndex)) {
+    generateNumber();
+
+    return;
+  }
+
+  oldQuestionsIndex.push(newQuestionIndex);
+
+  currentQuestion = questions[newQuestionIndex];
+}
