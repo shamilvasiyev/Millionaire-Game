@@ -84,6 +84,8 @@ const startGame = async () => {
 
   await fetchQuestionHandler();
 
+  console.log(Object.values(playerList));
+
   const sorterPlayerList = Object.values(playerList).sort(
     (a, b) => Number(b.score) - Number(a.score)
   );
@@ -338,7 +340,7 @@ const checkAnswer = async (e) => {
 
     trueAnswerAudio.play();
 
-    await generateNumber();
+    generateNumber();
 
     onTimesUp();
 
